@@ -1,4 +1,6 @@
 import React from 'react';
+import { useEffect } from 'react';
+import { useState } from 'react';
 
 const products = [
     {
@@ -49,13 +51,72 @@ const products = [
         describe: "Volkswagen Taigun is a 5 seater SUV available in a price range of ₹ 10.49 - 17.50 Lakh. In the BS6 era, the Taigun is powered by 999 cc Petrol engine which produces 114bhp of power and 178Nm of torque. The 1498 cc Petrol engine which produces 148bhp of power and 250Nm of torque.",
         img: 'https://static.autox.com/uploads/cars/2021/09/volkswagen-taigun3.jpg'
     },
+    {
+        key: 'car007',
+        name: 'Hyundai i20 N Line',
+        price: '9.84 Lakh',
+        launched: '02-Sep-2021',
+        describe: "Hyundai i20 N Line is a 5 seater Hatchback available in a price range of ₹ 9.84 - 11.91 Lakh. It is available in 6 variants, 1 engine option and 2 transmission options : Clutchless Manual and Automatic (Dual Clutch).",
+        img: 'https://static.autox.com/uploads/cars/2021/09/hyundai-i20-n-line.jpg'
+    },
+    {
+        key: 'car008',
+        name: 'Tata Tigor EV',
+        price: '11.99 Lakh',
+        launched: '31-Aug-2021',
+        describe: "Tata Motors has launched the new Tigor EV in India with ex-showroom prices starting at Rs. 11.99 lakh for the base XE variant. The Tata Tigor EV is now on sale in four varaints- XE, XM, XZ+ and XZ+ DT. The new Tata Tigor EV has adopted the brand's ZipTron powertrain shared with the Nexon EV and will be the second Tata EV powered by the new technology.",
+        img: 'https://static.autox.com/uploads/cars/2021/09/tata-tigor-ev.jpg'
+    },
+    {
+        key: 'car009',
+        name: 'Honda Amaze',
+        price: '6.36 Lakh',
+        launched: '18-Aug-2021',
+        describe: "Honda Cars India has launched the facelifted Amaze in the country. The model is available in three variants including E, S, and VX, across five colour options such as Platinum White Pearl, Lunar Silver Metallic, Golden Brown Metallic, Radiant Red, and a new Meteroid Grey Metallic colour.",
+        img: 'https://static.autox.com/uploads/cars/2021/08/honda-amaze.jpg'
+    },
+    {
+        key: 'car010',
+        name: 'Tata Tiago NRG',
+        price: '6.57 Lakh',
+        launched: '04-Aug-2021',
+        describe: "Tata Tiago NRG is a 5 seater Hatchback available in a price range of ₹ 6.57 - 7.09 Lakh. It is available in 2 variants, 1 engine option and 2 transmission options : Manual and AMT. Other key specifications of the Tiago NRG include a Ground Clearance of 181 mm, Kerb Weight of 1006 kg and Bootspace of 242 litres.",
+        img: 'https://static.autox.com/uploads/cars/2021/08/tata-tiago-nrg.jpg'
+    },
+    {
+        key: 'car011',
+        name: 'Mahindra Bolero Neo',
+        price: '8.77 Lakh',
+        launched: '13-Jul-2021',
+        describe: "Mahindra has launched the Bolero Neo in India and this is now its fourth SUV in the sub four-metre range of vehicles. It is a revitalised version of the TUV300 and is now being offered across four variants, seven colour options and with one diesel engine option. In front, Mahindra has fitted the SUV with the Bolero’s signature grille to bring it into the iconic SUV’s family range. ",
+        img: 'https://static.autox.com/uploads/cars/2021/07/mahindra-bolero-neo.jpg'
+    },
+    {
+        key: 'car012',
+        name: 'Hyundai Alcazar',
+        price: '16.3 Lakh',
+        launched: '18-Jul-2021',
+        describe: "Hyundai Alcazar is a 6 seater SUV available in a price range of ₹ 16.30 - 20.15 Lakh. It is available in 18 variants, 1 engine option and 2 transmission options : Manual and Automatic (Torque Converter). Other key specifications of the Alcazar include a Ground Clearance of 200 mm and Bootspace of 180 litres.",
+        img: 'https://static.autox.com/uploads/cars/2021/06/hyundai-alcazar.jpg'
+    },
 ]
 
 
 const Cars = () => {
+    const [products, setProducts] = useState([]);
+
+    useEffect(() => {
+        fetch('./products.json')
+            .then(res => res.json())
+            .then(data => setProducts(data))
+    }, []);
+
     return (
         <div>
-            <h2>welcome to cars earth !!!!!</h2>
+            <h2>New Car Models 2021</h2>
+            {
+
+            }
         </div>
     );
 };
