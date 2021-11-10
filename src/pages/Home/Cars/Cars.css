@@ -1,0 +1,19 @@
+.cars{
+    margin: 50px auto;
+}
+.cars h2{
+    text-align: center;
+    color: blue;
+    font-size: 60px;
+    margin-bottom: 20px;
+}
+.cars h2::after{
+    text-decoration: underline 0.15 em rgba(0, 0, 0, 0);
+   transition: text - decoration - color 300 ms;
+}
+.cars span{
+    font-weight: 600;
+}
+.car-img{
+    height: 200px;
+}

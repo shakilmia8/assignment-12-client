@@ -1,8 +1,10 @@
 import React from 'react';
-import { useEffect } from 'react';
-import { useState } from 'react';
+import './Cars.css';
+import { useState, useEffect } from 'react';
+import { Container, Row } from 'react-bootstrap';
+import Car from '../Car/Car';
 
-const products = [
+/* const products = [
     {
         key: 'car001',
         name: 'Volvo XC60',
@@ -99,7 +101,7 @@ const products = [
         describe: "Hyundai Alcazar is a 6 seater SUV available in a price range of ₹ 16.30 - 20.15 Lakh. It is available in 18 variants, 1 engine option and 2 transmission options : Manual and Automatic (Torque Converter). Other key specifications of the Alcazar include a Ground Clearance of 200 mm and Bootspace of 180 litres.",
         img: 'https://static.autox.com/uploads/cars/2021/06/hyundai-alcazar.jpg'
     },
-]
+] */
 
 
 const Cars = () => {
@@ -112,12 +114,16 @@ const Cars = () => {
     }, []);
 
     return (
-        <div>
+        <Container className='cars'>
             <h2>New Car Models 2021</h2>
             {
-
+                <Row xs={1} sm={1} md={2} lg={3} className="g-4">
+                    {Array.from({ length: 1 }).map((_, idx) => (
+                        products.map(product => <Car key={product.key} product={product}></Car>)
+                    ))}
+                </Row>
             }
-        </div>
+        </Container>
     );
 };
 
