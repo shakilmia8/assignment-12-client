@@ -1,0 +1,46 @@
+.contact-container{
+    text-align: center;
+}
+.contact{
+    margin: 40px 0px;
+}
+.contact h1{
+font-size: 60px;
+margin-bottom: 20px;
+color: purple;
+}
+.contact-number{
+    width: 428px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.contact Button{
+    padding: 10px 30px;
+}
+
+.other span{
+    color:purple;
+}
+.other i{
+    font-size: 40px;
+    margin: 20px 30px;
+}
+.other i:hover{
+    font-size: 45px;
+    color: blue;
+}
+
+/* Make it responsive */
+@media only screen and (max-width:991px) {
+    .img img{
+        width: 100%;
+    }  
+    .contact h1{
+        font-size: 40px;
+    }
+    .contact-number{
+        margin: -8px auto;
+        width: 70%;
+    }
+}

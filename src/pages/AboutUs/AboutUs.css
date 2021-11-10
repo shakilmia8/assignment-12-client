@@ -1,0 +1,37 @@
+.about-container img{
+    width: 100%;
+}
+.about{
+    margin-left: 300px;
+    width: 600px;
+    text-align: left;
+}
+.about h2{
+    color:#1886FF;
+    margin-left: 200px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    font-size: 40px;
+}
+.about p{
+    text-align: justify;
+}
+
+/* Make it responsive */
+@media only screen and (max-width:991px) {
+    .about-container img{
+        width: 100%;
+    }
+    .about{
+        margin: 50px auto;
+        width: 80%;
+    }
+    .about h2{
+        font-size: 30px;
+        text-align: center;
+        margin:0px auto;
+    }
+    .about p{
+        text-align: justify;
+    }
+}

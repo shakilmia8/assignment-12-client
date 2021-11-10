@@ -1,0 +1,19 @@
+.notfound{
+    text-align: center;
+    margin: 100px 0px;
+}
+.notfound i{
+    color:hotpink;
+    font-size: 150px;
+}
+.notfound h1{
+    color:purple;
+    font-size: 150px;
+}
+.notfound span{
+    color: greenyellow;
+}
+.notfound Button{
+    margin-top: 20px;
+    padding: 10px 40px;
+}
