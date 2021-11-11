@@ -7,13 +7,21 @@
     font-size: 60px;
     margin-bottom: 20px;
 }
-.cars h2::after{
-    text-decoration: underline 0.15 em rgba(0, 0, 0, 0);
-   transition: text - decoration - color 300 ms;
-}
+
 .cars span{
     font-weight: 600;
 }
+.car-card{
+    border: 1px solid slateblue;
+    background: linear-gradient(rgba(203, 241, 113, 0.151), rgba(94, 227, 245, 0.068));
+}
 .car-img{
     height: 200px;
+}
+
+/* Make it responsive */
+@media only screen and (max-width:991px) {
+    .cars h2{
+        font-size: 30px;
+    }
 }

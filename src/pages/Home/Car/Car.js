@@ -5,14 +5,14 @@ const Car = ({ product }) => {
     const { name, price, launched, describe, img } = product;
     return (
         <Col>
-            <Card>
+            <Card className='car-card'>
                 <Card.Img className='car-img' variant="top" src={img} />
                 <Card.Body>
-                    <Card.Title>{name}</Card.Title>
+                    <Card.Title style={{ color: 'tomato' }}>{name}</Card.Title>
                     <span>Price: {price}</span>
                     <p>Launched on: {launched}</p>
                     <Card.Text>
-                        {describe.slice(0, 100)}
+                        {describe.slice(0, 200)}
                     </Card.Text>
                 </Card.Body>
             </Card>

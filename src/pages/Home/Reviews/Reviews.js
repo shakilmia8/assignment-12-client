@@ -8,14 +8,14 @@ import Review from '../Review/Review';
     {
         id: 1,
         name: 'Alex Rodriguez',
-        rating: 4.5,
+        rating: 4,
         img: 'https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F20%2F2021%2F08%2F20%2Farod.jpg',
         describe: "I was test driving all the vehicles in the same class size as the XC60 and I can tell you without a doubt that this is the best option out there. To top it all off, it has the best features, best power in the base engine, best dealership experience, and is well known for being the safest car manufacturer. The fit and finish of every detail in the cabin is at the top of the segment. Lexus does have a little bit more softer door panels and dashes, but as far as the wood trim and fit and finish overall the Volvo is the winner. The cargo room is a little bit down on size compared to some of its competitors but it’s great usable space."
     },
     {
         id: 2,
         name: 'Niloy Sharma',
-        rating: 4.5,
+        rating: 4,
         img: 'https://i2.ytimg.com/vi/T7065bneZbc/maxresdefault.jpg',
         describe: "Worth budget car with higher safety rating and overall all road preferred??. Yes, the engine may lack but those minutes 2-3 secs doesn't bring a major difference. Hight safety, top-notch clearance, mini harrier looks, off-roader, superb mileage, decent price. Better than low safety Maruti and Hyundai cars. Made in India 🇮🇳 vocal for local. Top-notch clearance, mini harrier looks, off-roader, superb mileage, decent price. Better than low safety Maruti and Hyundai cars. Made in India 🇮🇳 vocal for local"
     },
@@ -44,7 +44,7 @@ const Reviews = () => {
             {
                 <Row xs={1} sm={1} md={2} lg={3} className="g-4">
                     {Array.from({ length: 1 }).map((_, idx) => (
-                        reviews.map(review => <Review key={review.key} review={review}></Review>)
+                        reviews.map(review => <Review key={review.id} review={review}></Review>)
                     ))}
                 </Row>
             }
