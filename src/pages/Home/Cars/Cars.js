@@ -115,7 +115,7 @@ const Cars = () => {
 
     return (
         <Container className='cars'>
-            <h2>New Car Models 2021</h2>
+            <h2>Our New Cars</h2>
             {
                 <Row xs={1} sm={1} md={2} lg={3} className="g-4">
                     {Array.from({ length: 1 }).map((_, idx) => (

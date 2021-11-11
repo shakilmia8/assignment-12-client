@@ -1,0 +1,13 @@
+.details{
+    margin:50px auto;
+    text-align: center;
+}
+.details-card{
+    background-image: linear-gradient(rgba(6, 243, 132, 0.582), rgba(6, 136, 34, 0.274));
+}
+.details h2{
+    color: tomato;
+}
+.details span{
+    font-weight: 600;
+}

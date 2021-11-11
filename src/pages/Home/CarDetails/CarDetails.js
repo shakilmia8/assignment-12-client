@@ -6,7 +6,7 @@ import Grid from '@mui/material/Grid';
 import Shipping from '../Shipping/Shipping';
 import Navigation from '../../Shared/Navigation/Navigation';
 import Footer from '../../Shared/Footer/Footer';
-// import './ServiceDetails.css';
+import './CarDetails.css';
 
 const CarDetails = () => {
     const { productId } = useParams();
@@ -30,19 +30,21 @@ const CarDetails = () => {
             <Navigation></Navigation>
             <Container>
                 <div className='details'>
-                    <h2>Welcome is Car Details</h2>
                     <Grid container spacing={2}>
                         <Grid item xs={12} md={6}>
                             <Col>
-                                <Card>
+                                <h2>Welcome is Car Details</h2>
+                                <Card className='details-card'>
                                     <Card.Img className='img' variant="top" src={singleProduct?.img} />
                                     <Card.Body>
                                         <Card.Title>{singleProduct?.name}</Card.Title>
+                                        <span>Price: {singleProduct?.price}</span>
+                                        <p>Launched on: {singleProduct?.launched}</p>
                                         <Card.Text>
                                             {singleProduct?.describe}
                                             <br />
                                             <br />
-                                            <Link to={`/home`}>
+                                            <Link to={`/moreCars`}>
                                                 <Button variant='dark'>See All Cars</Button>
                                             </Link>
                                         </Card.Text>
