@@ -28,6 +28,7 @@ const Contact = () => {
                             <input className="contact-number" type="number" placeholder="Enter your phone number" />
                             <br />
                             <br />
+                            <textarea type="text" id="" cols="30" rows="10" placeholder="Enter your comment here..."></textarea>
                         </form>
                         <Button>Send Us</Button>
                     </div>

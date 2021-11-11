@@ -44,7 +44,8 @@ const Register = () => {
                             type="text"
                             name="name"
                             onBlur={handleOnChange}
-                            variant="standard" />
+                            variant="standard"
+                            required />
                         <TextField
                             sx={{ width: '75%', m: 1 }}
                             id="standard-basic"
@@ -52,7 +53,8 @@ const Register = () => {
                             type="email"
                             name="email"
                             onBlur={handleOnChange}
-                            variant="standard" />
+                            variant="standard"
+                            required />
                         <TextField
                             sx={{ width: '75%', m: 1 }}
                             id="standard-password-input"
@@ -62,6 +64,7 @@ const Register = () => {
                             onBlur={handleOnChange}
                             autoComplete="current-password"
                             variant="standard"
+                            required
                         />
                         <TextField
                             sx={{ width: '75%', m: 1 }}
@@ -72,6 +75,7 @@ const Register = () => {
                             onBlur={handleOnChange}
                             autoComplete="current-password"
                             variant="standard"
+                            required
                         />
                         <Button sx={{ width: '75%', m: 1 }} variant="contained" type="submit">Register</Button>
                         <p>Already Registered? Please <NavLink style={{ textDecoration: 'none' }} to='/login'>Login</NavLink></p>

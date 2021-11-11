@@ -10,10 +10,10 @@ import MoreCar from '../MoreCar/MoreCar';
 const MoreCars = () => {
     const [products, setProducts] = useState([]);
 
-    const banner = 'https://i.pinimg.com/originals/0e/13/c0/0e13c0a0c04befda2b72c1d5754a2368.jpg';
+    const banner = 'https://www.aboudcar.com/wp-content/uploads/2017/10/GAC_Hyundai-Banner-.jpg';
 
     const bg = {
-        backroundUrl: `url(${banner})`
+        width: '100%',
     }
 
     useEffect(() => {
@@ -25,7 +25,12 @@ const MoreCars = () => {
     return (
         <div>
             <Navigation></Navigation>
-            <h1 style={bg}>BUY <br />YOUR <br /> CAR </h1>
+            <div>
+                <img style={bg} src={banner} alt="" />
+                <Container>
+                    <h1 style={{ marginTop: '-40px', color: 'tomato' }}> COMMING SOON ... </h1>
+                </Container>
+            </div>
             <Container className='cars'>
                 <h2>New Car Models 2021</h2>
                 {
