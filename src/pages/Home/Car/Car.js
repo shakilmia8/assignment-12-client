@@ -1,13 +1,10 @@
 import React from 'react';
 import { Col, Card, Button } from 'react-bootstrap';
-import { useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Car = ({ product }) => {
-    const { name, price, launched, describe, img } = product;
-    const history = useHistory();
-    const handleShipping = () => {
-        history.push('/shipping')
-    }
+    const { key, name, price, launched, describe, img } = product;
+
     return (
         <Col>
             <Card className='car-card'>
@@ -19,7 +16,7 @@ const Car = ({ product }) => {
                     <Card.Text>
                         {describe.slice(0, 200)}
                     </Card.Text>
-                    <Button onClick={handleShipping} variant='dark'>Buy Now</Button>
+                    <Link to={`/carDetails/${key}`}><Button variant='dark'>Buy Now</Button></Link>
                 </Card.Body>
             </Card>
         </Col>

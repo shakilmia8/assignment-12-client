@@ -4,7 +4,7 @@ import AuthProvider from './contexts/AuthProvider';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import PrivateRoute from './pages/Login/PrivateRoute/PrivateRoute';
 import Home from './pages/Home/Home/Home';
-import Shipping from './pages/Home/Shipping/Shipping';
+import CarDetails from './pages/Home/CarDetails/CarDetails';
 import AboutUs from './pages/AboutUs/AboutUs';
 import Contact from './pages/Contact/Contact';
 import Register from './pages/Login/Register/Register';
@@ -23,8 +23,8 @@ function App() {
           <Route path='/home'>
             <Home></Home>
           </Route>
-          <PrivateRoute path='/shipping'>
-            <Shipping></Shipping>
+          <PrivateRoute path='/carDetails/:productId'>
+            <CarDetails></CarDetails>
           </PrivateRoute>
           <Route path='/about'>
             <AboutUs></AboutUs>
