@@ -6,6 +6,7 @@ import PrivateRoute from './pages/Login/PrivateRoute/PrivateRoute';
 import Home from './pages/Home/Home/Home';
 import CarDetails from './pages/Home/CarDetails/CarDetails';
 import MoreCars from './pages/MoreCars/MoreCars/MoreCars';
+import Dashboard from './pages/Dashboard/Dashboard/Dashboard';
 import AboutUs from './pages/AboutUs/AboutUs';
 import Contact from './pages/Contact/Contact';
 import Register from './pages/Login/Register/Register';
@@ -27,6 +28,9 @@ function App() {
           <Route path='/moreCars'>
             <MoreCars></MoreCars>
           </Route>
+          <PrivateRoute path='/dashboard'>
+            <Dashboard></Dashboard>
+          </PrivateRoute>
           <PrivateRoute path='/carDetails/:productId'>
             <CarDetails></CarDetails>
           </PrivateRoute>

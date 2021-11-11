@@ -1,0 +1,13 @@
+.add-reviews{
+    text-align: center;
+    margin: 20px auto;
+}
+.add-reviews input{
+    padding: 10px;
+    margin: 10px;
+    width: 60%;
+}
+.add-reviews textarea{
+    width: 60%;
+    margin: 0px 10px;
+}

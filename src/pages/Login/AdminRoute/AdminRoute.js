@@ -1,5 +1,5 @@
 import React from 'react';
-import useAuth from '../../hooks/useAuth';
+import useAuth from '../../../hooks/useAuth';
 import { Route, Redirect } from 'react-router-dom';
 import { CircularProgress } from '@mui/material';
 
