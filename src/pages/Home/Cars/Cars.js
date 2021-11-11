@@ -119,7 +119,7 @@ const Cars = () => {
             {
                 <Row xs={1} sm={1} md={2} lg={3} className="g-4">
                     {Array.from({ length: 1 }).map((_, idx) => (
-                        products.map(product => <Car key={product.key} product={product}></Car>)
+                        products.slice(0, 6).map(product => <Car key={product.key} product={product}></Car>)
                     ))}
                 </Row>
             }

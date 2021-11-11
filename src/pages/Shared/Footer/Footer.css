@@ -1,0 +1,47 @@
+.footer-container{
+    background: #212529;
+    color:#fff;
+    padding: 20px 0px;
+}
+.footer-content{
+    display: flex;
+    justify-content: space-around;
+    padding: 20px 0px;
+}
+.footer-content h4{
+    color: rgb(241, 34, 6);
+}
+.icon-color{
+    color: rgb(241, 34, 6);
+}
+.footer-content li{
+    list-style: none;
+}
+.footer-content li:hover{
+    color: #212B9B;
+}
+.footer-content i{
+    font-size: 20px;
+}
+.footer-content i:hover{
+    color: #212B9B;
+}
+.footer-link{
+    color:#fff;
+    margin: 0px;
+    padding: 0px;
+}
+.footer-text{
+    text-align: center;
+}
+
+/* Make it responsive */
+@media only screen and (max-width:991px) {
+    .footer-content{
+        display: block;
+        margin:0px 100px;
+    }
+    .footer-gap{
+        margin: 20px auto;
+    }
+}
