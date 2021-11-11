@@ -2,12 +2,15 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import AuthProvider from './contexts/AuthProvider';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import PrivateRoute from './pages/Login/PrivateRoute/PrivateRoute';
 import Home from './pages/Home/Home/Home';
+import Shipping from './pages/Home/Shipping/Shipping';
 import AboutUs from './pages/AboutUs/AboutUs';
 import Contact from './pages/Contact/Contact';
 import Register from './pages/Login/Register/Register';
 import Login from './pages/Login/Login/Login';
 import NotFound from './pages/NotFound/NotFound';
+
 
 function App() {
   return (
@@ -20,6 +23,9 @@ function App() {
           <Route path='/home'>
             <Home></Home>
           </Route>
+          <PrivateRoute path='/shipping'>
+            <Shipping></Shipping>
+          </PrivateRoute>
           <Route path='/about'>
             <AboutUs></AboutUs>
           </Route>

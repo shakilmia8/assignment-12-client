@@ -1,10 +1,27 @@
-const firebaseConfig = {
-    apiKey: process.env.REACT_APP_API_KEY,
-    authDomain: process.env.REACT_APP_AUTH_DOMAIN,
-    projectId: process.env.REACT_APP_PROJECT_ID,
-    storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
-    messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
-    appId: process.env.REACT_APP_APP_ID,
+import React from 'react';
+import useAuth from '../../../hooks/useAuth';
+import { Route, Redirect } from 'react-router-dom';
+import { CircularProgress } from '@mui/material';
+
+const PrivateRoute = ({ children, ...rest }) => {
+    const { user, isLoading } = useAuth();
+    if (isLoading) { return <CircularProgress /> }
+    return (
+        <Route
+            {...rest}
+            render={({ location }) =>
+                user?.email ? (
+                    children
+                ) : (
+                    <Redirect
+                        to={{
+                            pathname: '/login',
+                            state: { from: location }
+                        }}
+                    />
+                )}
+        />
+    );
 };
 
-export default firebaseConfig;
+export default PrivateRoute;
