@@ -37,14 +37,14 @@ const Dashboard = () => {
             <Toolbar />
             <Divider />
             <Link style={{ color: 'black', textDecoration: 'none' }} to='/home'><Button>Home</Button></Link><br />
-            <Link style={{ color: 'black', textDecoration: 'none' }} to={`${url}`}><Button>My Orders</Button></Link>
-            <Link style={{ color: 'black', textDecoration: 'none' }} to={`${url}/addReviews`}><Button>Add Reviews</Button></Link>
+            <Link style={{ color: 'black', textDecoration: 'none' }} to={`${url}`}><Button>My Orders</Button></Link><br />
+            <Link style={{ color: 'black', textDecoration: 'none' }} to={`${url}/addReviews`}><Button>Add Reviews</Button></Link><br />
             {
                 admin && <Box>
-                    <Link style={{ color: 'black', textDecoration: 'none' }} to={`${url}/allOrders`}><Button>All Orders</Button></Link>
-                    <Link style={{ color: 'black', textDecoration: 'none' }} to={`${url}/manageAllCars`}><Button>Manage All Cars</Button></Link>
-                    <Link style={{ color: 'black', textDecoration: 'none' }} to={`${url}/addCar`}><Button>Add Car</Button></Link>
-                    <Link style={{ color: 'black', textDecoration: 'none' }} to={`${url}/makeAdmin`}><Button>Make Admin</Button></Link>
+                    <Link style={{ color: 'black', textDecoration: 'none' }} to={`${url}/allOrders`}><Button>All Orders</Button></Link><br />
+                    <Link style={{ color: 'black', textDecoration: 'none' }} to={`${url}/manageAllCars`}><Button>Manage All Cars</Button></Link><br />
+                    <Link style={{ color: 'black', textDecoration: 'none' }} to={`${url}/addCar`}><Button>Add Car</Button></Link><br />
+                    <Link style={{ color: 'black', textDecoration: 'none' }} to={`${url}/makeAdmin`}><Button>Make Admin</Button></Link><br />
                 </Box>
             }
 

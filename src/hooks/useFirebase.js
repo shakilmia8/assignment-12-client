@@ -102,11 +102,11 @@ const useFirebase = () => {
         return () => unSubscribe;
     }, [auth])
 
-    /* useEffect(() => {
-        fetch(`https://cryptic-lowlands-15291.herokuapp.com/users/${user.email}`)
+    useEffect(() => {
+        fetch(`http://localhost:7000/users/${user.email}`)
             .then(res => res.json())
             .then(data => setAdmin(data.admin))
-    }, [user.email]) */
+    }, [user.email])
 
     const logOut = () => {
         setIsLoading(true);

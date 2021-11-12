@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { TextField, Button, Alert } from '@mui/material';
+import { Container, TextField, Button, Alert } from '@mui/material';
 import useAuth from '../../../hooks/useAuth';
 
 const MakeAdmin = () => {
@@ -14,7 +14,7 @@ const MakeAdmin = () => {
     const handleAddAdmin = e => {
         e.preventDefault();
         const user = { email };
-        fetch('https://cryptic-lowlands-15291.herokuapp.com/users/admin', {
+        fetch('http://localhost:7000/users/admin', {
             method: 'PUT',
             headers: {
                 'authorization': `Bearer ${token}`,
@@ -25,25 +25,25 @@ const MakeAdmin = () => {
             .then(data => {
                 if (data.modifiedCount) {
                     setSuccess(true);
-                    console.log(data);
                     setEmail('')
                 }
             })
     }
 
     return (
-        <div>
+        <Container style={{ textAlign: 'center' }}>
             <h2>Make an Admin</h2>
             <form onSubmit={handleAddAdmin}>
                 <TextField
+                    sx={{ width: '45%' }}
                     label="Email"
                     type='email'
                     onBlur={handleOnBlur}
                     variant="standard" />
                 <Button type='submit' variant="contained">Make Admin</Button>
             </form>
-            {success && <Alert severity='success'>Made An Admin Successfully!</Alert>}
-        </div>
+            {success && <Alert severity='success'>Made An Admin Successfully</Alert>}
+        </Container>
     );
 };
 

@@ -4,16 +4,17 @@ import { useForm } from "react-hook-form";
 import useAuth from '../../../hooks/useAuth';
 import { getStoredCart, clearTheCart } from '../../../utilities/fakedb';
 
-const Shipping = () => {
+const Shipping = ({ product }) => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
-    const { user } = useAuth();
+    const { user, token } = useAuth();
     const onSubmit = data => {
         const savedCart = getStoredCart();
         data.order = savedCart;
 
-        fetch('https://ghoulish-web-04262.herokuapp.com/orders', {
+        fetch('http://localhost:7000/orders', {
             method: 'POST',
             headers: {
+                'authorization': `Bearer ${token}`,
                 'content-type': 'application/json'
             },
             body: JSON.stringify(data)
@@ -32,8 +33,12 @@ const Shipping = () => {
             <div className='add-service'>
                 <h2>Orders Form</h2>
                 <form className="shipping-form" onSubmit={handleSubmit(onSubmit)}>
-                    <input defaultValue={user.displayName} {...register("name")} /><br />
-                    <input defaultValue={user.email} {...register("email", { required: true })} /><br />
+                    <input defaultValue={user.displayName} {...register("name")} readOnly /><br />
+                    <input defaultValue={user.email} {...register("email", { required: true })} readOnly /><br />
+                    <input defaultValue={product._id} {...register("productId", { required: true })} readOnly /><br />
+                    <input defaultValue={product.name} {...register("productName", { required: true })} readOnly /><br />
+                    <input defaultValue={product.price} {...register("productPrice", { required: true })} readOnly /><br />
+                    <input defaultValue={new Date().toLocaleDateString()} {...register("OrderDate", { required: true })} readOnly /><br />
                     <input placeholder="Address" defaultValue="" {...register("address")} /><br />
                     <input placeholder="City" defaultValue="" {...register("city")} /><br />
                     <input placeholder="Phone" defaultValue="" {...register("phone")} /><br />

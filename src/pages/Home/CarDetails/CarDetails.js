@@ -46,7 +46,7 @@ const CarDetails = () => {
                             </Col>
                         </Grid>
                         <Grid item xs={12} md={6}>
-                            <Shipping></Shipping>
+                            <Shipping productId={productId} product={product} ></Shipping>
                         </Grid>
                     </Grid>
                 </div>

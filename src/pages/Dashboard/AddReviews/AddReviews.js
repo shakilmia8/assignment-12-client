@@ -2,24 +2,27 @@ import React from 'react';
 import { useRef } from 'react';
 import './AddReviews.css';
 import { Container } from 'react-bootstrap';
+import useAuth from '../../../hooks/useAuth';
 
 const AddReviews = () => {
+    const { token } = useAuth();
     const nameRef = useRef();
-    const countryRef = useRef();
+    const ratingRef = useRef();
     const imgRef = useRef();
     const describeRef = useRef();
 
     const handleAddReviews = e => {
         const name = nameRef.current.value;
-        const country = countryRef.current.value;
+        const rating = ratingRef.current.value;
         const img = imgRef.current.value;
         const describe = describeRef.current.value;
 
-        const newService = { name, country, img, describe };
+        const newService = { name, rating, img, describe };
 
-        fetch('https://ghoulish-web-04262.herokuapp.com/services', {
+        fetch('http://localhost:7000/reviews', {
             method: 'POST',
             headers: {
+                'authorization': `Bearer ${token}`,
                 'content-type': 'application/json'
             },
             body: JSON.stringify(newService)
@@ -27,7 +30,7 @@ const AddReviews = () => {
             .then(res => res.json())
             .then(data => {
                 if (data.insertedId) {
-                    alert('Successfully added the service')
+                    alert('Successfully added your reviews')
                     e.target.reset();
                 }
             })
@@ -38,10 +41,10 @@ const AddReviews = () => {
             <div className='add-reviews'>
                 <h2>Your reviews add please</h2>
                 <form onSubmit={handleAddReviews}>
-                    <input placeholder='Enter the place name' type="text" ref={nameRef} /><br />
-                    <input placeholder='Enter the place country' type="text" ref={countryRef} /><br />
-                    <input placeholder='Enter the place imgUrl' type="text" ref={imgRef} /><br />
-                    <textarea placeholder='Enter the place describe' name="" id="" cols="30" rows="10" ref={describeRef}></textarea><br />
+                    <input placeholder='Enter your name' type="text" ref={nameRef} /><br />
+                    <input placeholder='Enter your rating out of 5' type="number" ref={ratingRef} /><br />
+                    <input placeholder='Enter your imgUrl' type="text" ref={imgRef} /><br />
+                    <textarea placeholder='Enter your reviews' name="" id="" cols="30" rows="10" ref={describeRef}></textarea><br />
                     <input type="submit" value="Add Your Reviews" />
                 </form>
             </div>

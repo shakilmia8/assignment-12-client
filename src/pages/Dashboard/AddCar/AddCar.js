@@ -1,9 +1,10 @@
 import React from 'react';
 import { useRef } from 'react';
-// import './AddReviews.css';
+import useAuth from '../../../hooks/useAuth';
 import { Container } from 'react-bootstrap';
 
 const AddCar = () => {
+    const { token } = useAuth();
     const nameRef = useRef();
     const priceRef = useRef();
     const launchedRef = useRef();
@@ -22,6 +23,7 @@ const AddCar = () => {
         fetch('http://localhost:7000/products', {
             method: 'POST',
             headers: {
+                'authorization': `Bearer ${token}`,
                 'content-type': 'application/json'
             },
             body: JSON.stringify(newProduct)
@@ -41,7 +43,7 @@ const AddCar = () => {
                 <h2>Please add a Car</h2>
                 <form onSubmit={handleAddCar}>
                     <input placeholder='Enter the car model name' type="text" ref={nameRef} /><br />
-                    <input placeholder='Enter the car price' type="number" ref={priceRef} /><br />
+                    <input placeholder='Enter the car price' type="text" ref={priceRef} /><br />
                     <input placeholder='Enter the launched date' type="text" ref={launchedRef} /><br />
                     <input placeholder='Enter the place imgUrl' type="text" ref={imgRef} /><br />
                     <textarea placeholder='Enter the place describe' name="" id="" cols="30" rows="10" ref={describeRef}></textarea><br />
