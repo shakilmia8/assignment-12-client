@@ -10,20 +10,13 @@ import './CarDetails.css';
 
 const CarDetails = () => {
     const { productId } = useParams();
-    const [product, setProduct] = useState([]);
-    const [singleProduct, setSingleProduct] = useState({});
+    const [product, setProduct] = useState({});
 
     useEffect(() => {
-        fetch(`/productsDetails.json`)
+        fetch(`http://localhost:7000/products/${productId}`)
             .then(res => res.json())
-            .then(data => setProduct(data.tree));
+            .then(data => setProduct(data));
     }, [productId])
-
-    useEffect(() => {
-        const foundProduct = product.find(p => p.key === productId)
-        setSingleProduct(foundProduct);
-    }, [product])
-
 
     return (
         <div>
@@ -35,13 +28,13 @@ const CarDetails = () => {
                             <Col>
                                 <h2>Welcome is Car Details</h2>
                                 <Card className='details-card'>
-                                    <Card.Img className='img' variant="top" src={singleProduct?.img} />
+                                    <Card.Img className='img' variant="top" src={product?.img} />
                                     <Card.Body>
-                                        <Card.Title>{singleProduct?.name}</Card.Title>
-                                        <span>Price: {singleProduct?.price}</span>
-                                        <p>Launched on: {singleProduct?.launched}</p>
+                                        <Card.Title>{product?.name}</Card.Title>
+                                        <span>Price: {product?.price}</span>
+                                        <p>Launched on: {product?.launched}</p>
                                         <Card.Text>
-                                            {singleProduct?.describe}
+                                            {product?.describe}
                                             <br />
                                             <br />
                                             <Link to={`/moreCars`}>

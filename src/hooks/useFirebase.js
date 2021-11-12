@@ -17,7 +17,7 @@ const useFirebase = () => {
 
     const saveUser = (email, displayName, method) => {
         const user = { email, displayName };
-        fetch('https://cryptic-lowlands-15291.herokuapp.com/users', {
+        fetch('http://localhost:7000/users', {
             method: method,
             headers: {
                 'content-type': 'application/json'

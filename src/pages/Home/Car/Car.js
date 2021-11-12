@@ -3,7 +3,7 @@ import { Col, Card, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 const Car = ({ product }) => {
-    const { key, name, price, launched, describe, img } = product;
+    const { _id, name, price, launched, describe, img } = product;
 
     return (
         <Col>
@@ -16,7 +16,7 @@ const Car = ({ product }) => {
                     <Card.Text>
                         {describe.slice(0, 200)}
                     </Card.Text>
-                    <Link to={`/carDetails/${key}`}><Button variant='dark'>Buy Now</Button></Link>
+                    <Link to={`/carDetails/${_id}`}><Button variant='dark'>Buy Now</Button></Link>
                 </Card.Body>
             </Card>
         </Col>

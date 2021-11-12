@@ -17,7 +17,7 @@ const MoreCars = () => {
     }
 
     useEffect(() => {
-        fetch('./products.json')
+        fetch('http://localhost:7000/products')
             .then(res => res.json())
             .then(data => setProducts(data))
     }, []);
@@ -36,7 +36,7 @@ const MoreCars = () => {
                 {
                     <Row xs={1} sm={1} md={2} lg={3} className="g-4">
                         {Array.from({ length: 1 }).map((_, idx) => (
-                            products.map(product => <MoreCar key={product.key} product={product}></MoreCar>)
+                            products.map(product => <MoreCar key={product._id} product={product}></MoreCar>)
                         ))}
                     </Row>
                 }
