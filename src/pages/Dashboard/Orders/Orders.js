@@ -7,6 +7,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+import { Button } from 'react-bootstrap'
 import useAuth from '../../../hooks/useAuth';
 
 const Orders = () => {
@@ -21,6 +22,7 @@ const Orders = () => {
 
     return (
         <TableContainer component={Paper}>
+            <h2 style={{ textAlign: 'center' }}>Your Order Table</h2>
             <Table aria-label="Your Order Table">
                 <TableHead>
                     <TableRow>
@@ -46,6 +48,7 @@ const Orders = () => {
                             <TableCell align="right">{row.productName}</TableCell>
                             <TableCell align="right">{row.productPrice}</TableCell>
                             <TableCell align="right">{row.OrderDate}</TableCell>
+                            <TableCell align="right"><Button>Cancel</Button></TableCell>
                         </TableRow>
                     ))}
                 </TableBody>

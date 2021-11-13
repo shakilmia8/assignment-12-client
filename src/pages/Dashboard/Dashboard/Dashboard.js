@@ -17,6 +17,7 @@ import ManageAllCars from '../ManageAllCars/ManageAllCars';
 import MakeAdmin from '../MakeAdmin/MakeAdmin';
 import Orders from '../Orders/Orders';
 import useAuth from '../../../hooks/useAuth';
+import Pay from '../Pay/Pay';
 
 const drawerWidth = 200;
 
@@ -24,7 +25,7 @@ const drawerWidth = 200;
 
 const Dashboard = () => {
     const [mobileOpen, setMobileOpen] = React.useState(false);
-    const { user, admin } = useAuth();
+    const { user, admin, logOut } = useAuth();
 
     const handleDrawerToggle = () => {
         setMobileOpen(!mobileOpen);
@@ -36,19 +37,20 @@ const Dashboard = () => {
         <div>
             <Toolbar />
             <Divider />
-            <Link style={{ color: 'black', textDecoration: 'none' }} to='/home'><Button>Home</Button></Link><br />
-            <Link style={{ color: 'black', textDecoration: 'none' }} to={`${url}`}><Button>My Orders</Button></Link><br />
-            <Link style={{ color: 'black', textDecoration: 'none' }} to={`${url}/addReviews`}><Button>Add Reviews</Button></Link><br />
+            <Link style={{ textDecoration: 'none' }} to='/home'><Button>Home</Button></Link><br />
+            <Link style={{ textDecoration: 'none' }} to='/moreCars'><Button>MoreCars</Button></Link><br />
+            <Link style={{ textDecoration: 'none' }} to={`${url}/pay`}><Button>Pay</Button></Link><br />
+            <Link style={{ textDecoration: 'none' }} to={`${url}`}><Button>My Orders</Button></Link><br />
+            <Link style={{ textDecoration: 'none' }} to={`${url}/addReviews`}><Button>Add Reviews</Button></Link><br />
             {
                 admin && <Box>
-                    <Link style={{ color: 'black', textDecoration: 'none' }} to={`${url}/allOrders`}><Button>All Orders</Button></Link><br />
-                    <Link style={{ color: 'black', textDecoration: 'none' }} to={`${url}/manageAllCars`}><Button>Manage All Cars</Button></Link><br />
-                    <Link style={{ color: 'black', textDecoration: 'none' }} to={`${url}/addCar`}><Button>Add Car</Button></Link><br />
-                    <Link style={{ color: 'black', textDecoration: 'none' }} to={`${url}/makeAdmin`}><Button>Make Admin</Button></Link><br />
+                    <Link style={{ textDecoration: 'none' }} to={`${url}/allOrders`}><Button>Manage All Orders</Button></Link><br />
+                    <Link style={{ textDecoration: 'none' }} to={`${url}/manageAllCars`}><Button>Manage All Cars</Button></Link><br />
+                    <Link style={{ textDecoration: 'none' }} to={`${url}/addCar`}><Button>Add A Car</Button></Link><br />
+                    <Link style={{ textDecoration: 'none' }} to={`${url}/makeAdmin`}><Button>Make Admin</Button></Link><br />
                 </Box>
             }
-
-
+            <Link style={{ textDecoration: 'none' }} to={`${url}/login`}><Button onClick={logOut}>Log out</Button></Link><br />
         </div>
     );
 
@@ -118,6 +120,9 @@ const Dashboard = () => {
                     <Switch>
                         <Route exact path={path}>
                             <Orders></Orders>
+                        </Route>
+                        <Route path={`${path}/pay`}>
+                            <Pay></Pay>
                         </Route>
                         <Route path={`${path}/addReviews`}>
                             <AddReviews></AddReviews>
