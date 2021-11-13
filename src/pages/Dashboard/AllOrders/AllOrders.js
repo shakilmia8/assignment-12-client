@@ -45,9 +45,9 @@ const AllOrders = () => {
     }
 
     return (
-        <TableContainer style={{ width: "100%" }} component={Paper}>
+        <TableContainer component={Paper}>
             <h2 style={{ textAlign: 'center' }}>Customer All Order's Table</h2>
-            <Table aria-label="Your Order Table">
+            <Table style={{ width: "100%" }} aria-label="Your Order Table">
                 <TableHead>
                     <TableRow>
                         <TableCell>Customer Name</TableCell>
