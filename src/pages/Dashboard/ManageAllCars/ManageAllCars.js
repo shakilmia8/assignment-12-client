@@ -47,7 +47,7 @@ const ManageAllOrders = () => {
     }
 
     return (
-        <TableContainer component={Paper}>
+        <TableContainer style={{ width: "100%" }} component={Paper}>
             <h2 style={{ textAlign: 'center' }}>Manage All Product's Table</h2>
             <Table aria-label="Your Order Table">
                 <TableHead>

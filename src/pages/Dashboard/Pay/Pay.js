@@ -3,7 +3,7 @@ import React from 'react';
 const Pay = () => {
     return (
         <div>
-            <h1>Payment getaway coming soooooooooooooooon!!!!!!!!!!!!!!! <br /> Wait for this !!! </h1>
+            <h1 style={{ width: '100%', textAlign: 'center' }}>Payment getaway coming soooooooon!!! <br /> Wait for this !!! </h1>
         </div>
     );
 };
