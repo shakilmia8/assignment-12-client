@@ -16,6 +16,7 @@ import AllOrders from '../AllOrders/AllOrders';
 import ManageAllCars from '../ManageAllCars/ManageAllCars';
 import MakeAdmin from '../MakeAdmin/MakeAdmin';
 import Orders from '../Orders/Orders';
+import Update from '../Update/Update';
 import useAuth from '../../../hooks/useAuth';
 import Pay from '../Pay/Pay';
 
@@ -132,6 +133,9 @@ const Dashboard = () => {
                         </AdminRoute>
                         <AdminRoute path={`${path}/manageAllCars`}>
                             <ManageAllCars></ManageAllCars>
+                        </AdminRoute>
+                        <AdminRoute exact path={`${path}/manageAllCars/update/:id`}>
+                            <Update></Update>
                         </AdminRoute>
                         <AdminRoute path={`${path}/addCar`}>
                             <AddCar></AddCar>

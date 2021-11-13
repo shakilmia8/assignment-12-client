@@ -11,14 +11,37 @@ import { Button } from 'react-bootstrap'
 import useAuth from '../../../hooks/useAuth';
 
 const Orders = () => {
-    const { user } = useAuth();
+    const { user, token } = useAuth();
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:7000/orders?email=${user.email}`)
+        fetch(`https://fierce-fjord-96835.herokuapp.com/orders?email=${user.email}`)
             .then(res => res.json())
             .then(data => setProducts(data))
-    }, [user.email])
+    }, [user.email]);
+
+    // Cancel a product
+    const handleCancelProduct = id => {
+        const proceed = window.confirm('Are you sure, you want to cancel?');
+        if (proceed) {
+            const url = `https://fierce-fjord-96835.herokuapp.com/orders?email=${user.email}&${id}`;
+            fetch(url, {
+                method: 'DELETE',
+                headers: {
+                    'authorization': `Bearer ${token}`
+                }
+            })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.deletedCount > 0) {
+                        alert('Canceled Successfully');
+                        const remainingProducts = products.filter(product => product._id !== id);
+                        setProducts(remainingProducts);
+                    }
+                })
+        }
+
+    }
 
     return (
         <TableContainer component={Paper}>
@@ -48,7 +71,7 @@ const Orders = () => {
                             <TableCell align="right">{row.productName}</TableCell>
                             <TableCell align="right">{row.productPrice}</TableCell>
                             <TableCell align="right">{row.OrderDate}</TableCell>
-                            <TableCell align="right"><Button>Cancel</Button></TableCell>
+                            <TableCell align="right"><Button onClick={() => handleCancelProduct(row._id)} >Cancel</Button></TableCell>
                         </TableRow>
                     ))}
                 </TableBody>

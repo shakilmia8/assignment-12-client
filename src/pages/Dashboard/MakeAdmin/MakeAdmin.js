@@ -14,7 +14,7 @@ const MakeAdmin = () => {
     const handleAddAdmin = e => {
         e.preventDefault();
         const user = { email };
-        fetch('http://localhost:7000/users/admin', {
+        fetch('https://fierce-fjord-96835.herokuapp.com/users/admin', {
             method: 'PUT',
             headers: {
                 'authorization': `Bearer ${token}`,

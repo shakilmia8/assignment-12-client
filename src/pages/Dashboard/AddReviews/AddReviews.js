@@ -19,7 +19,7 @@ const AddReviews = () => {
 
         const newService = { name, rating, img, describe };
 
-        fetch('http://localhost:7000/reviews', {
+        fetch('https://fierce-fjord-96835.herokuapp.com/reviews', {
             method: 'POST',
             headers: {
                 'authorization': `Bearer ${token}`,

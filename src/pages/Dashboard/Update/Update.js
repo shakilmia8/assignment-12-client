@@ -2,13 +2,15 @@ import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { useParams } from 'react-router-dom';
+import useAuth from '../../../hooks/useAuth';
 
 const Update = () => {
     const [service, setService] = useState({});
     const { id } = useParams();
+    const { token } = useAuth();
 
     useEffect(() => {
-        const url = `https://ghoulish-web-04262.herokuapp.com/services/${id}`;
+        const url = `http://localhost:7000/products/${id}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setService(data))
@@ -22,10 +24,17 @@ const Update = () => {
         setService(updatedService);
     }
 
-    const handleCountryChange = e => {
-        const updatedCountry = e.target.value;
+    const handlePriceChange = e => {
+        const updatedPrice = e.target.value;
         const updatedService = { ...service };
-        updatedService.country = updatedCountry;
+        updatedService.country = updatedPrice;
+        setService(updatedService);
+    }
+
+    const handleLaunchedChange = e => {
+        const updatedLaunched = e.target.value;
+        const updatedService = { ...service };
+        updatedService.country = updatedLaunched;
         setService(updatedService);
     }
 
@@ -44,10 +53,11 @@ const Update = () => {
     }
 
     const handleUpdateService = e => {
-        const url = `https://ghoulish-web-04262.herokuapp.com/services/${id}`;
+        const url = `http://localhost:7000/products/${id}`;
         fetch(url, {
             method: 'PUT',
             headers: {
+                'authorization': `Bearer ${token}`,
                 'content-type': 'application/json'
             },
             body: JSON.stringify(service)
@@ -66,10 +76,11 @@ const Update = () => {
             <h2>Updated this document </h2>
             <form onSubmit={handleUpdateService}>
                 <input onChange={handleNameChange} value={service.name || ''} type="text" /><br />
-                <input onChange={handleCountryChange} value={service.country || ''} type="text" /><br />
+                <input onChange={handlePriceChange} value={service.price || ''} type="text" /><br />
+                <input onChange={handleLaunchedChange} value={service.launched || ''} type="text" /><br />
                 <input onChange={handleImgUrlChange} value={service.img || ''} type="text" /><br />
                 <textarea onChange={handleDescribeChange} value={service.describe || ''} name="" id="" cols="30" rows="10"></textarea><br />
-                <input type="submit" value="Updated this service" />
+                <input type="submit" value="Updated this product" />
             </form>
         </div>
     );

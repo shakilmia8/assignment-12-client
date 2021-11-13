@@ -8,15 +8,41 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { Button } from 'react-bootstrap'
+import useAuth from '../../../hooks/useAuth';
 
 const AllOrders = () => {
     const [products, setProducts] = useState([]);
+    const { token } = useAuth();
 
     useEffect(() => {
-        fetch(`http://localhost:7000/orders/allOrders`)
+        fetch(`https://fierce-fjord-96835.herokuapp.com/orders/allOrders`)
             .then(res => res.json())
             .then(data => setProducts(data))
-    }, [])
+    }, []);
+
+    // Cancel a product
+    const handleCancelProduct = id => {
+        const proceed = window.confirm('Are you sure, you want to cancel?');
+        if (proceed) {
+            const url = `https://fierce-fjord-96835.herokuapp.com/orders/${id}`;
+            console.log(url);
+            fetch(url, {
+                method: 'DELETE',
+                headers: {
+                    'authorization': `Bearer ${token}`
+                }
+            })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.deletedCount > 0) {
+                        alert('Canceled Successfully');
+                        const remainingProducts = products.filter(product => product._id !== id);
+                        setProducts(remainingProducts);
+                    }
+                })
+        }
+
+    }
 
     return (
         <TableContainer component={Paper}>
@@ -46,7 +72,7 @@ const AllOrders = () => {
                             <TableCell align="right">{row.productName}</TableCell>
                             <TableCell align="right">{row.productPrice}</TableCell>
                             <TableCell align="right">{row.OrderDate}</TableCell>
-                            <TableCell align="right"><Button>Cancel</Button></TableCell>
+                            <TableCell align="right"><Button onClick={() => handleCancelProduct(row.productId)}>Cancel</Button></TableCell>
                         </TableRow>
                     ))}
                 </TableBody>

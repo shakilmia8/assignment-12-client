@@ -1,70 +1,61 @@
-# Getting Started with Create React App
+# Getting Started with website is Automotor
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+You see server site code private link [Click here](https://github.com/programming-hero-web-course-4/niche-website-server-side-shakilmia8).
 
-## Available Scripts
+If you want to visit this site [Click here](https://assignment-12-abbcd.firebaseapp.com/).
 
-In the project directory, you can run:
+## Advantage of Automotor website
 
-### `yarn start`
+1. 90% reduction in traffic deaths.
+Yes, you read that right.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+The United States Department of Transportation (USDOT) predicts that the rise of driverless cars will see the number of traffic deaths fall drastically.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+This prediction makes sense when you think about it.
 
-### `yarn test`
+In 2017 it reported 37,133 deaths due to vehicle crashes (94% of which are down to human error).
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+So a 90% reduction would save 30,000 lives in a single year.
 
-### `yarn build`
+2. 60% drop in harmful emissions.
+Fewer accidents mean less traffic congestion, which means a drop in emissions.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+But this is not just due to a reduction in accidents.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Ohio University's Future of Driving report states that harmful emissions will be reduced by 60% after the advent of autonomous vehicles.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. Eliminate stop-and-go waves by 100%.
+According to research at the University of Illinois at Urbana-Champaign, autonomous cars could eliminate the waves of traffic created by stop-and-go behavior (where humans, rather than road accidents, develop changes in speeds).
 
-### `yarn eject`
+This, in turn, will not only save people time but decrease the time their cars are on the roads and therefore reduce emissions.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+4. 10% improvement in fuel economy.
+Rand’s Autonomous Vehicle Technology guide states that self-driving cars will provide a reduction in fuel economy by between 4% and 10%.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+This is supported by the Ohio University study, which puts a figure of 3.1 billion gallons of fuel as the amount wasted by US drivers each year. 
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+5. 500% increase in lane capacity .
+The same Rand report also predicts that lane capacity could increase by a staggering 500%.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+The State Smart Transportation Initiative only puts this figure at 100% (still an impressive increase), which it says, in turn, could result in a 20% increase in traffic speeds.
 
-## Learn More
+6. 40% reduction in travel time.
+UK citizens’ travel time could be reduced by 40%, according to KPMG’s Connected and Autonomous Vehicles – The UK Economic Opportunity.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+The result?
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+A saving of £20bn in increased productivity and better use of time for people who would otherwise have been traveling in vehicles.
 
-### Code Splitting
+Meanwhile, in the US, autonomous cars are expected to save workers 80 billion hours lost to commuting, which will save the economy US$1.3tn.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
+7. Consumer savings of £5bn.
+In the UK, according to KPMG, the savings to be had on reduced insurance costs, reduced running costs, and parking mean the UK consumer market would save £5bn a year.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+And there's more.
 
-### Making a Progressive Web App
+Autonomous cars are also expected to solve the 'last mile problem' (whereby people struggle to travel the final mile between their home and the public transport drop-off point).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+It should supplement public transport, utilizing the reduction in traffic and the autonomous car's ability to find a parking space and park all by itself.
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Moreover, there is a predicted drop in taxi wait time of 88% when autonomous taxis are used, 15% less space needed for parking and enhanced mobility for seniors in an aging population.

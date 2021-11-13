@@ -11,7 +11,7 @@ const Shipping = ({ product }) => {
         const savedCart = getStoredCart();
         data.order = savedCart;
 
-        fetch('http://localhost:7000/orders', {
+        fetch('https://fierce-fjord-96835.herokuapp.com/orders', {
             method: 'POST',
             headers: {
                 'authorization': `Bearer ${token}`,

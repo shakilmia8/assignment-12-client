@@ -108,7 +108,7 @@ const Cars = () => {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:7000/products')
+        fetch('https://fierce-fjord-96835.herokuapp.com/products')
             .then(res => res.json())
             .then(data => setProducts(data))
     }, []);

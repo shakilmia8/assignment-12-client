@@ -20,7 +20,7 @@ const AddCar = () => {
 
         const newProduct = { name, price, launched, img, describe };
 
-        fetch('http://localhost:7000/products', {
+        fetch('https://fierce-fjord-96835.herokuapp.com/products', {
             method: 'POST',
             headers: {
                 'authorization': `Bearer ${token}`,
