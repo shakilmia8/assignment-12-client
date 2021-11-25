@@ -56,7 +56,7 @@ const ManageAllOrders = () => {
                         <TableCell align="right">Price</TableCell>
                         <TableCell align="right">Launched Date</TableCell>
                         <TableCell align="right">describe</TableCell>
-                        <TableCell align="right">Img Url</TableCell>
+                        <TableCell align="right">Img</TableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>
@@ -71,7 +71,7 @@ const ManageAllOrders = () => {
                             <TableCell align="right">{row.price}</TableCell>
                             <TableCell align="right">{row.launched}</TableCell>
                             <TableCell align="right">{row.describe.slice(0, 35)}</TableCell>
-                            <TableCell align="right">{row.img.slice(0, 25)}</TableCell>
+                            <TableCell align="right"> <img width="60px" src={row.img} alt="" /> </TableCell>
                             <TableCell align="right"><Link to={`/dashboard/manageAllCars/update/${row._id}`}><Button>Update</Button></Link></TableCell>
                             <TableCell align="right"><Button onClick={() => handleDeleteProduct(row._id)} >Delete</Button></TableCell>
                         </TableRow>
