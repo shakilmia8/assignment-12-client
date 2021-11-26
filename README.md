@@ -1,6 +1,6 @@
 # Getting Started with website is Automotor
 
-You see server site code private link [Click here](https://github.com/programming-hero-web-course-4/niche-website-server-side-shakilmia8).
+You see server site code link [Click here](https://github.com/shakilmia8/assignment-12-server).
 
 If you want to visit this site [Click here](https://assignment-12-abbcd.firebaseapp.com/).
 
